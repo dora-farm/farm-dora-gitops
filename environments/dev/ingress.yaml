@@ -47,7 +47,7 @@ spec:
                 name: farm-dora-product
                 port:
                   number: 8050
-          - path: /(.*)
+          - path: /
             pathType: Prefix
             backend:
               service:
