@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: farm-dora-client-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/dora-farm/farm-dora-helm-charts.git
+    targetRevision: HEAD
+    path: client  # Helm 차트 경로
+    helm:
+      valueFiles:
+        - values.yaml
+      values: |
+        image:
+          repository: chakisuk/farm-dora-client
+          tag: latest
+        environment: dev
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: farmdora-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

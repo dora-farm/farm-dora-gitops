@@ -1,0 +1,56 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: farm-dora-ingress
+  namespace: farmdora-dev
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+#    - host: farmdora.kro.kr  # 배포환경 도메인
+    - http:
+        paths:
+          - path: /api/activity(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: farm-dora-activity
+                port:
+                  number: 8010
+          - path: /api/buyer(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: farm-dora-buyer
+                port:
+                  number: 8020
+          - path: /api/search(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: farm-dora-search
+                port:
+                  number: 8030
+          - path: /api/auth(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: farm-dora-auth
+                port:
+                  number: 8040
+          - path: /api/product(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: farm-dora-product
+                port:
+                  number: 8050
+          - path: /(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: farm-dora-client
+                port:
+                  number: 80
