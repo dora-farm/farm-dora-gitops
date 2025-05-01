@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/dora-farm/farm-dora-helm-charts.git
     targetRevision: HEAD
-    path: search  # Helm 차트 경로
+    path: farm-dora-search  # Helm 차트 경로
     helm:
       valueFiles:
         - values.yaml
