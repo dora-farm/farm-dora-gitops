@@ -12,35 +12,35 @@ spec:
 #    - host: farmdora.kro.kr  # 배포환경 도메인
     - http:
         paths:
-          - path: /api/activity(/|$)(.*)
+          - path: /api/activity
             pathType: Prefix
             backend:
               service:
                 name: farm-dora-activity
                 port:
                   number: 8010
-          - path: /api/buyer(/|$)(.*)
+          - path: /api/buyer
             pathType: Prefix
             backend:
               service:
                 name: farm-dora-buyer
                 port:
                   number: 8020
-          - path: /api/search(/|$)(.*)
+          - path: /api/search
             pathType: Prefix
             backend:
               service:
                 name: farm-dora-search
                 port:
                   number: 8030
-          - path: /api/auth(/|$)(.*)
+          - path: /api/auth
             pathType: Prefix
             backend:
               service:
                 name: farm-dora-auth
                 port:
                   number: 8040
-          - path: /api/product(/|$)(.*)
+          - path: /api/product
             pathType: Prefix
             backend:
               service:
