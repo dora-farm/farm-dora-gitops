@@ -16,41 +16,41 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: farm-dora-activity
+                name: farm-dora-activity-dev
                 port:
                   number: 8010
           - path: /api/buyer
             pathType: Prefix
             backend:
               service:
-                name: farm-dora-buyer
+                name: farm-dora-buyer-dev
                 port:
                   number: 8020
           - path: /api/search
             pathType: Prefix
             backend:
               service:
-                name: farm-dora-search
+                name: farm-dora-search-dev
                 port:
                   number: 8030
           - path: /api/auth
             pathType: Prefix
             backend:
               service:
-                name: farm-dora-auth
+                name: farm-dora-auth-dev
                 port:
                   number: 8040
           - path: /api/product
             pathType: Prefix
             backend:
               service:
-                name: farm-dora-product
+                name: farm-dora-product-dev
                 port:
                   number: 8050
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: farm-dora-client
+                name: farm-dora-client-dev
                 port:
                   number: 80
