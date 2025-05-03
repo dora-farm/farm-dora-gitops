@@ -6,6 +6,11 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($request_uri ~* \.(js|mjs)$) {
+        add_header Content-Type application/javascript;
+        add_header X-Content-Type-Options nosniff;
+      }
 spec:
   ingressClassName: nginx
   rules:
@@ -47,6 +52,13 @@ spec:
                 name: farm-dora-product-dev
                 port:
                   number: 8050
+          - path: /assets/(.*\.js)$
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: farm-dora-client-dev
+                port:
+                  number: 80
           - path: /
             pathType: Prefix
             backend:
