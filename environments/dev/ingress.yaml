@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: farmdora.kro.kr  # 배포환경 도메인
+    - host: www.farmdora.kro.kr  # 배포환경 도메인
       http:
         paths:
           - path: /api/(activity)(.*)
