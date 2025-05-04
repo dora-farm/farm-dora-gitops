@@ -10,7 +10,7 @@ spec:
   ingressClassName: nginx
   rules:
     - host: farmdora.kro.kr  # 배포환경 도메인
-    - http:
+      http:
         paths:
           - path: /api/(activity)(.*)
             pathType: ImplementationSpecific
