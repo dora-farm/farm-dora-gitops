@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: farm-dora.kro.kr # 변경
+    - host: www.farm-dora.kro.kr # 변경
       http:
         paths:
           - path: /api/(activity)(.*)
