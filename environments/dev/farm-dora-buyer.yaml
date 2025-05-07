@@ -15,7 +15,7 @@ spec:
       values: |
         image:
           repository: chakisuk/farm-dora-buyer
-          tag: "3"
+          tag: "4"
         service:
           port: 8020
         environment: dev
