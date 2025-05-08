@@ -15,7 +15,7 @@ spec:
       values: |
         image:
           repository: chakisuk/farm-dora-activity
-          tag: latest
+          tag: "24"
         service:
           port: 8010
         environment: dev
