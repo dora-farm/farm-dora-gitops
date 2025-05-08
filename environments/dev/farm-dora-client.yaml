@@ -13,17 +13,13 @@ spec:
       valueFiles:
         - values.yaml
       values: |
-        image:
-          repository: chakisuk/farm-dora-client
-          tag: "58"
-        environment: dev
-        resources:
-          limits:
-            cpu: 200m
-            memory: 256Mi
-          requests:
-            cpu: 100m
-            memory: 128Mi
+        image.repository=chakisuk/farm-dora-client
+        image.tag=58
+        environment=dev
+        resources.limits.cpu=200m
+        resources.limits.memory=256Mi
+        resources.requests.cpu=100m
+        resources.requests.memory=128Mi
   destination:
     server: https://kubernetes.default.svc
     namespace: farmdora-dev
