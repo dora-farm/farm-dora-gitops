@@ -15,7 +15,7 @@ spec:
       values: |
         image:
           repository: chakisuk/farm-dora-client
-          tag: "64"
+          tag: "65"
         environment: dev
         resources:
           limits:
