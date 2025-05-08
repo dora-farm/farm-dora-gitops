@@ -12,8 +12,7 @@ spec:
     - host: www.farm-dora.kro.kr # 변경
       http:
         paths:
-          # - path: /api/(activity)(.*)
-          - path: /api/(admin)(.*)
+          - path: /api/(activity)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
