@@ -12,28 +12,6 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-      # values: |
-      #   image:
-      #     repository: chakisuk/farm-dora-activity
-      #     tag: "24"
-      #   service:
-      #     port: 8010
-      #   environment: dev
-      #   resources:
-      #     limits:
-      #       cpu: 1000m
-      #       memory: 1024Mi
-      #     requests:
-      #       cpu: 300m
-      #       memory: 512Mi
-      #   livenessProbe:
-      #     initialDelaySeconds: 180
-      #     periodSeconds: 10
-      #     failureThreshold: 10
-      #   readinessProbe:
-      #     initialDelaySeconds: 180
-      #     periodSeconds: 10
-      #     failureThreshold: 10
   destination:
     server: https://kubernetes.default.svc
     namespace: farmdora-dev

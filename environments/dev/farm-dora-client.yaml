@@ -12,18 +12,6 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-      values: |
-        image:
-          repository: chakisuk/farm-dora-client
-          tag: "70"
-        environment: dev
-        resources:
-          limits:
-            cpu: 200m
-            memory: 256Mi
-          requests:
-            cpu: 100m
-            memory: 128Mi
   destination:
     server: https://kubernetes.default.svc
     namespace: farmdora-dev
