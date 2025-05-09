@@ -6,8 +6,16 @@ metadata:
   annotations:
     # nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/use-regex: "true"
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: nginx
+  tls:
+  - host: 
+    - www.farm-dora.kro.kr
+    secretName: farm-dora-tls-secret
   rules:
     - host: www.farm-dora.kro.kr # 변경
       http:
