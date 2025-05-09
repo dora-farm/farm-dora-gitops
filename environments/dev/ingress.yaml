@@ -13,7 +13,7 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-  - host: 
+  - hosts: 
     - www.farm-dora.kro.kr
     secretName: farm-dora-tls-secret
   rules:
